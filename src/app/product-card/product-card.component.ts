@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Products } from '../products';
 @Component({
   selector: 'app-product-card',
@@ -7,6 +7,7 @@ import { Products } from '../products';
 })
 export class ProductCardComponent {
   @Input() item!: Products;
+  @Output() shareButton = new EventEmitter<string>();
 
   constructor() {
     console.log(this);
