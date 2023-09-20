@@ -3,6 +3,6 @@
   <p>Description: {{ item.description }}</p>
   <button (click)="shareFromChild()">Share</button>
   <p *ngIf="item.price > 700">
-    <button>Notify</button>
+    <button (click)="notifyButton.emit()">Notify</button>
   </p>
 </div>

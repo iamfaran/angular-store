@@ -4,6 +4,7 @@
     *ngFor="let product of products"
     [item]="product"
     (shareButton)="share()"
+    (notifyButton)="onNotify()"
   >
   </app-product-card>
 </div>
