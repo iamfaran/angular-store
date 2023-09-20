@@ -1,5 +1,9 @@
 <div>
   <h2>Products</h2>
-  <app-product-card *ngFor="let product of products" [item]="product">
+  <app-product-card
+    *ngFor="let product of products"
+    [item]="product"
+    (shareButton)="share()"
+  >
   </app-product-card>
 </div>

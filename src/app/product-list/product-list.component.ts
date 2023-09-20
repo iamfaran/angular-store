@@ -10,4 +10,7 @@ export class ProductListComponent {
   constructor() {
     console.log(this);
   }
+  share() {
+    alert('The product has been shared!');
+  }
 }
