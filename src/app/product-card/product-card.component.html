@@ -1,6 +1,8 @@
 <div>
   <h3>{{ item.name }}</h3>
-  <p>Price: {{ item.price }}</p>
   <p>Description: {{ item.description }}</p>
   <button (click)="shareFromChild()">Share</button>
+  <p *ngIf="item.price > 700">
+    <button>Notify</button>
+  </p>
 </div>
