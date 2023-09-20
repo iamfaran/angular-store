@@ -22,6 +22,6 @@ export const products: Products[] = [
     id: 3,
     name: 'Phone Standard',
     price: 299,
-    description: 'A standard phone with a standard screen',
+    description: ' A standard phone with a standard screen',
   },
 ];
