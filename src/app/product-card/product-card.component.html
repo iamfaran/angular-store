@@ -1,5 +1,9 @@
 <div>
-  <h3>{{ item.name }}</h3>
+  <h3>
+    <a [routerLink]="['/products', item.id]" [title]="item.name + ' details'">{{
+      item.name
+    }}</a>
+  </h3>
   <p>Description: {{ item.description }}</p>
   <button (click)="shareFromChild()">Share</button>
   <p *ngIf="item.price > 700">
