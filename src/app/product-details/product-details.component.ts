@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Products, products } from '../products';
+import { Product, products } from '../products';
 
 @Component({
   selector: 'app-product-details',
@@ -8,7 +8,7 @@ import { Products, products } from '../products';
   styleUrls: ['./product-details.component.css'],
 })
 export class ProductDetailsComponent implements OnInit {
-  product: Products | undefined;
+  product: Product | undefined;
 
   constructor(private route: ActivatedRoute) {
     const routeParams = this.route.snapshot.paramMap;
