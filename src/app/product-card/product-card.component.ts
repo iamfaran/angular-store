@@ -9,9 +9,7 @@ export class ProductCardComponent {
   @Input() item!: Products;
   @Output() shareButton = new EventEmitter<void>();
   @Output() notifyButton = new EventEmitter<void>();
-  constructor() {
-    console.log(this);
-  }
+  constructor() {}
 
   shareFromChild() {
     this.shareButton.emit();
