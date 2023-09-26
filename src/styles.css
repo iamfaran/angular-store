@@ -96,6 +96,7 @@ button:disabled {
 .fancy-button {
   background-color: white;
   color: #1976d2;
+  position: relative;
 }
 
 .fancy-button i.material-icons {
@@ -140,6 +141,21 @@ app-top-bar h1 {
 .container {
   display: flex;
   padding: 16px;
+}
+
+.cart-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  color: white;
+  right: -10px;
+  top: -10px;
 }
 /*
   Copyright Google LLC. All Rights Reserved.
