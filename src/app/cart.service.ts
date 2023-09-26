@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CartService {
   items: Product[] = [];
+  totalItems = 0;
   constructor(private http: HttpClient) {}
   addToCart(product: Product) {
     const newID = product.id;
@@ -17,10 +18,9 @@ export class CartService {
       const updateProduct = { ...this.items[productIndex] };
       updateProduct.qty += 1;
       this.items[productIndex] = updateProduct;
-
-      return;
+    } else {
+      this.items.push(product);
     }
-    this.items.push(product);
   }
   getItems() {
     return this.items;

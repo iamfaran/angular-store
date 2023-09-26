@@ -10,6 +10,7 @@ import { Product } from '../products';
 export class TopBarComponent {
   cartItems = this.cartService.items;
   constructor(private cartService: CartService) {
+    debugger;
     console.log(this);
   }
 }
