@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { Product } from './products';
 import { HttpClient } from '@angular/common/http';
 @Injectable({
@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CartService {
   items: Product[] = [];
-  totalItems = 0;
+  cartUpdated = new EventEmitter();
   constructor(private http: HttpClient) {}
   addToCart(product: Product) {
     const newID = product.id;
@@ -21,6 +21,7 @@ export class CartService {
     } else {
       this.items.push(product);
     }
+    this.cartUpdated.emit(this.items);
   }
   getItems() {
     return this.items;

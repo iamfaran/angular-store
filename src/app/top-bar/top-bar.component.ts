@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
 import { Product } from '../products';
 
@@ -7,10 +7,18 @@ import { Product } from '../products';
   templateUrl: './top-bar.component.html',
   styleUrls: ['./top-bar.component.css'],
 })
-export class TopBarComponent {
-  cartItems = this.cartService.items;
-  constructor(private cartService: CartService) {
-    debugger;
-    console.log(this);
+export class TopBarComponent implements OnInit {
+  totalQty: number = 0;
+  constructor(private cartService: CartService) {}
+  ngOnInit() {
+    this.cartService.cartUpdated.subscribe((items: Product[]) => {
+      this.cartTotal();
+    });
+  }
+  cartTotal() {
+    this.totalQty = this.cartService.items.reduce(
+      (acc, item) => acc + item.qty,
+      0
+    );
   }
 }

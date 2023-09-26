@@ -4,9 +4,7 @@
 
 <a class="button fancy-button" routerLink="/cart">
   <!-- cart icon -->
-  <span *ngIf="cartItems.length > 0" class="cart-icon">{{
-    cartItems.length
-  }}</span>
+  <span *ngIf="totalQty > 0" class="cart-icon">{{ totalQty }}</span>
 
   <em class="material-icons">shopping_cart</em></a
 >
