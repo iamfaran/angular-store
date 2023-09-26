@@ -8,6 +8,18 @@ export class CartService {
   items: Product[] = [];
   constructor(private http: HttpClient) {}
   addToCart(product: Product) {
+    const newID = product.id;
+    const productIndex = this.items.findIndex((product) => {
+      return product.id == newID;
+    });
+
+    if (productIndex > -1) {
+      const updateProduct = { ...this.items[productIndex] };
+      updateProduct.qty += 1;
+      this.items[productIndex] = updateProduct;
+
+      return;
+    }
     this.items.push(product);
   }
   getItems() {

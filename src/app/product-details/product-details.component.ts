@@ -23,7 +23,6 @@ export class ProductDetailsComponent implements OnInit {
     this.product = products.find(
       (product) => product.id === productIdFromRoute
     );
-    console.log(this.product);
   }
 
   // add to cart method
